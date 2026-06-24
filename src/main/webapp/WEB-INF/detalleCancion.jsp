@@ -21,30 +21,37 @@
                 <span class="etiqueta">ID</span>
                 <span class="valor">${cancion.id}</span>
             </div>
+
             <div class="campo">
                 <span class="etiqueta">Título</span>
                 <span class="valor">${cancion.titulo}</span>
             </div>
+
             <div class="campo">
                 <span class="etiqueta">Artista</span>
                 <span class="valor">${cancion.artista}</span>
             </div>
+
             <div class="campo">
                 <span class="etiqueta">Álbum</span>
                 <span class="valor">${cancion.album}</span>
             </div>
+
             <div class="campo">
                 <span class="etiqueta">Género</span>
                 <span class="valor">${cancion.genero}</span>
             </div>
+
             <div class="campo">
                 <span class="etiqueta">Idioma</span>
                 <span class="valor">${cancion.idioma}</span>
             </div>
+
             <div class="campo">
                 <span class="etiqueta">Fecha de creación</span>
                 <span class="valor">${cancion.fechaCreacion}</span>
             </div>
+
             <div class="campo">
                 <span class="etiqueta">Última actualización</span>
                 <span class="valor">${cancion.fechaActualizacion}</span>
@@ -53,7 +60,7 @@
     </c:otherwise>
 </c:choose>
 
-<a class="btn-volver" href="/canciones">← Volver a lista de canciones</a>
+<a class="btn-volver" href="/canciones"> Volver a lista de canciones</a>
 
 </body>
 </html>

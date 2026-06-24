@@ -2,9 +2,15 @@ package com.ivana.models;
 
 import java.time.LocalDateTime;
 
-import jakarta.persistence.*;
-
-import java.util.Date;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.Size;
 
 
 @Entity
@@ -15,18 +21,23 @@ public class Cancion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Size(min = 5, message = "El título debe tener al menos 5 caracteres." )
     @Column(nullable = false)
     private String titulo;
 
+    @Size(min = 3, message = "El artista debe tener al menos 3 caracteres")
     @Column(nullable = false)
     private String artista;
 
+    @Size(min = 3, message = "El album debe tener al menos 3 caracteres" )
     @Column
     private String album;
 
+    @Size(min = 3, message = "El género debe tener al menos 3 caracteres")
     @Column
     private String genero;
 
+    @Size(min = 3, message = "El idioma debe tener al menos 3 caracteres")
     @Column
     private String idioma;
 
