@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,11 +13,6 @@
 <div class="contend">
     <h1>Detalle de Canción</h1>
 
-        <c:choose>
-            <c:when test="${cancion == null}">
-                <p>La canción no fue encontrada.</p>
-            </c:when>
-            <c:otherwise>
                 <div class="card">
                     <div class="campo">
                         <span class="etiqueta">ID</span>
@@ -59,15 +55,22 @@
                     </div>
                 </div>
 
-        <a href="/canciones/formulario/editar/${cancion.id}"> 
-            <button>Actualizar canción</button>
-        </a>
-            </c:otherwise>
-        </c:choose>
+                <div class="botones">
+                    <a href="/canciones/formulario/editar/${cancion.id}"><button>Editar canción</button></a>
 
+                    <br>
+                
+        <form action="/canciones/eliminar/${cancion.id}" method="post">
+            <input type="hidden" name="_method" value="delete">
+
+            <button type="submit" class="btn-delete">Eliminar canción</button>
+        </form>
+
+        <br>
 
         <a class="btn-volver" href="/canciones"> Volver a lista de canciones</a>
-</div>
 
+        </div>
+</div>
 </body>
 </html>

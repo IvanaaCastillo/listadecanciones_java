@@ -43,7 +43,7 @@
             <form:errors path="idioma"/>
         </div>
 
-        <button type="submit">Guardar</button>
+        <button type="submit">Agregar Cancion</button>
 
     </form:form>
 

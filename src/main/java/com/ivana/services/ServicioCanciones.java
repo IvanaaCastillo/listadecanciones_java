@@ -15,10 +15,12 @@ public class ServicioCanciones {
     @Autowired
     private RepositorioCanciones repositorioCanciones;
 
+    //Obtener todas las canciones
     public List<Cancion> obtenerTodasLasCanciones() {
         return repositorioCanciones.findAll();
     }
 
+    //Obtener una cancion por id
     public Cancion obtenerCancionPorId(Long id) {
         Optional<Cancion> resultado = repositorioCanciones.findById(id);
         return resultado.orElse(null);
@@ -32,5 +34,10 @@ public class ServicioCanciones {
     //Actualizar canciones
     public Cancion actualizarCancion(Cancion cancion) {
         return repositorioCanciones.save(cancion);
+    }
+
+    //Eliminar canciones
+    public void eliminaCancion(Long id) {
+        repositorioCanciones.deleteById(id);
     }
 }

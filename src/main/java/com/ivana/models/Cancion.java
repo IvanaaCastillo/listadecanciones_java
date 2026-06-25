@@ -60,10 +60,12 @@ public class Cancion {
         this.fechaActualizacion = LocalDateTime.now();
     }
 
+    //Constructor vacio
     public Cancion () {
         
     }
 
+    //Getters y Setters
     public Long getId() {
         return id;
     }
