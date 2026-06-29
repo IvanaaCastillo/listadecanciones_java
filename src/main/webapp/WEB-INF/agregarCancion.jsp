@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h1>Agregar Canción</h1>
+    <h1>Agregar Nueva Canción</h1>
         <form:form modelAttribute="cancion" method="post" action="/canciones/procesa/agregar">
 
         <div>
@@ -20,9 +20,13 @@
         </div>
 
         <div>
-            <form:label path="artista">Artista:</form:label>
-            <form:input type="text" path="artista"/>
-            <form:errors path="artista"/>
+            <label for="artistaId">Artista:</label>
+            <select name="artistaId" id="artistaId">
+                <option value="">Seleccione un artista</option>
+                <c:forEach var="artista" items="${artistas}">
+                    <option value="${artista.id}">${artista.nombre} ${artista.apellido}</option>
+                </c:forEach>
+            </select>
         </div>
         
         <div>

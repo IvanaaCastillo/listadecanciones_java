@@ -20,22 +20,22 @@
                     </div>
 
                     <div class="campo">
-                        <span class="etiqueta">Título</span>
-                        <span class="valor">${cancion.titulo}</span>
+                        <span class="etiqueta">Titulo</span>
+                        <span class="valor">${cancion.titulo} ${cancion.artista.apellido}</span>
                     </div>
 
                     <div class="campo">
                         <span class="etiqueta">Artista</span>
-                        <span class="valor">${cancion.artista}</span>
+                        <span class="valor">${cancion.artista.nombre}</span>
                     </div>
 
                     <div class="campo">
-                        <span class="etiqueta">Álbum</span>
+                        <span class="etiqueta">Album</span>
                         <span class="valor">${cancion.album}</span>
                     </div>
 
                     <div class="campo">
-                        <span class="etiqueta">Género</span>
+                        <span class="etiqueta">Genero</span>
                         <span class="valor">${cancion.genero}</span>
                     </div>
 
@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="campo">
-                        <span class="etiqueta">Última actualización</span>
+                        <span class="etiqueta">Ultima actualizacion</span>
                         <span class="valor">${cancion.fechaActualizacion}</span>
                     </div>
                 </div>

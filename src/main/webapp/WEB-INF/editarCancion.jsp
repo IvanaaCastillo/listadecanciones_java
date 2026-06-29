@@ -22,9 +22,12 @@
                 <form:input path="titulo"/>
                 <form:errors class="error" path="titulo"/>
 
-                <form:label path="artista">Artista</form:label>
-                <form:input path="artista"/>
-                <form:errors class="error" path="artista"/>
+                <label for="artistaId">Artista</label>
+                <select name="artistaId" id="artistaId">
+                    <c:forEach var="artista" items="${artistas}">
+                        <option value="${artista.id}" ${artista.id == cancion.artista.id ? 'selected' : ''}>${artista.nombre} ${artista.apellido}</option>
+                    </c:forEach>
+                </select>
 
                 <form:label path="album">Album</form:label>
                 <form:input path="album"/>

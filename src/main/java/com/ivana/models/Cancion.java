@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
@@ -25,9 +27,9 @@ public class Cancion {
     @Column(nullable = false)
     private String titulo;
 
-    @Size(min = 3, message = "El artista debe tener al menos 3 caracteres")
+    /*@Size(min = 3, message = "El artista debe tener al menos 3 caracteres")
     @Column(nullable = false)
-    private String artista;
+    private String artista;*/
 
     @Size(min = 3, message = "El album debe tener al menos 3 caracteres" )
     @Column
@@ -60,10 +62,14 @@ public class Cancion {
         this.fechaActualizacion = LocalDateTime.now();
     }
 
+    @ManyToOne
+    @JoinColumn(name = "artista_id")
+    private Artista artista;
+
     //Constructor vacio
     public Cancion () {
-        
     }
+
 
     //Getters y Setters
     public Long getId() {
@@ -80,14 +86,6 @@ public class Cancion {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }
-
-    public String getArtista() {
-        return artista;
-    }
-
-    public void setArtista(String artista) {
-        this.artista = artista;
     }
 
     public String getAlbum() {
@@ -128,6 +126,20 @@ public class Cancion {
 
     public void setFechaActualizacion(LocalDateTime fechaActualizacion) { 
         this.fechaActualizacion = fechaActualizacion; 
+    }
+
+    public Artista getArtista() {
+        return artista;
+    }
+
+    public void setArtista(Artista artista) {
+        this.artista = artista;
+    }
+
+    @Override
+    public String toString() {
+        return "Cancion [id=" + id + ", titulo=" + titulo + ", genero=" + genero + ", idioma=" + idioma
+                + ", fechaCreacion=" + fechaCreacion + ", fechaActualizacion=" + fechaActualizacion + "]";
     }
 
 }

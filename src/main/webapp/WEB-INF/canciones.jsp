@@ -32,7 +32,14 @@
                     <c:forEach var="cancion" items="${canciones}">
                         <tr>
                             <td>${cancion.titulo}</td>
-                            <td>${cancion.artista}</td>
+                            <td>
+                                <c:choose>
+                                    <c:when test="${not empty cancion.artista}">
+                                        ${cancion.artista.nombre} ${cancion.artista.apellido}
+                                    </c:when>
+                                    <c:otherwise>Sin artista</c:otherwise>
+                                </c:choose>
+                            </td>
                             <td>
                                 <a class="btn-detalle" href="/canciones/detalle/${cancion.id}">Detalle</a>
                             </td>
@@ -42,11 +49,19 @@
             </c:choose>
         </tbody>
     </table>
-    </div>
+</div>
 
     <div class="center-btn">
 	    <a href="/canciones/formulario/agregar" class="btn btn-success">Agregar Canción</a>
 	</div>
+<br>
+    <div class="center-btn">
+        <a href="/artistas" class="btn btn-success">Ir a artistas</a>
+    </div>
+<br>
+    <div class="center-btn">
+        <a href="/artistas/formulario/agregar" class="btn btn-success">Agregar Artista</a>
+    </div>
 
 
 </body>
